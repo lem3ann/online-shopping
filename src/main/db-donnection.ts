@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 export async function connectToDatabase() {
   if (!process.env.MONGO_URL) {
     throw new Error("Not found ...");

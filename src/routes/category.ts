@@ -3,7 +3,7 @@ import { categorySchema } from "../models/category-schema";
 import mongoose from "mongoose";
 const router = express.Router();
 router.use(express.json());
-const Category = mongoose.model("category", categorySchema);
+export const Category = mongoose.model("category", categorySchema);
 // ---------------------------------------------- CREATE ---------------------------------------------------------
 router.post("/categories/add", async (req, res) => {
   const { name, description } = req.body;

@@ -2,11 +2,12 @@ import mongoose from "mongoose";
 export const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    min: 3,
-    max: 50,
+    minLength: 3,
+    maxLength: 50,
     lowercase: true,
     trim: true,
     required: true,
+    unique: true,
   },
   price: {
     type: Number,
@@ -14,10 +15,11 @@ export const productSchema = new mongoose.Schema({
     required: true,
   },
   stock: {
-    type: String,
+    type: Number,
   },
   category: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: "category",
   },
   description: {
     type: String,
